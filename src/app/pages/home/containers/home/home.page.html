@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="search-container">
+    <div class="row">
+
+      <div class="input-group col-md-6">
+        <div class="input-group-prepend">
+          <button class="btn btn-outline-info" [disabled]="!searchControl.valid" (click)="doSearch()" type="button"
+            id="button-addon1">Pesquisar</button>
+        </div>
+        <input type="text" class="form-control" [formControl]="searchControl" placeholder="Pesquisa Normal"
+          aria-describedby="button-addon1">
+      </div>
+
+      <div class="col-md-6">
+        <jv-cities-typeahead [formControl]="searchControlWithAutocomplete">
+        </jv-cities-typeahead>
+      </div>
+
+    </div>
+    <br>
+    <jv-loader *ngIf="loading$ | async"></jv-loader>
+
+    <div *ngIf="!(loading$ | async) && !(error$ | async) && !!cityWeather">
+      <jv-current-weather [cityWeather]="cityWeather" [isFavorite]="isCurrentFavorite$ | async" [unit]="unit$ | async"
+        (toggleBookmark)="onToggleBookmark()"></jv-current-weather>
+    </div>
+
+    <div *ngIf="!(loading$ | async) && error$ | async">
+      <div class="alert alert-danger" role="alert">Tentar novamente</div>
+    </div>
+  </div>
+</div>

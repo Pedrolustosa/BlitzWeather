@@ -1,0 +1,25 @@
+<nav class="navbar navbar-dark bg-info font-weight-bold">
+  <a class="navbar-brand form-inline"><img src="../assets/image/nuvem.png" class="w-25"> Blitz Weather</a>
+
+  <div id="navbar-portal-outlet"></div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 bg-transparent border-right">
+      <div class="row p-2">
+        <div class="col-sm-12">
+          <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action btn-outline-primary" data-toggle="list" routerLink="/"
+              role="tab" aria-controls="home">Home</a>
+            <a class="list-group-item list-group-item-action btn-outline-warning" data-toggle="list"
+              routerLink="/bookmarks" role="tab" aria-controls="favoritos">Favoritos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

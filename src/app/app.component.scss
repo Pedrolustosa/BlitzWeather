@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700;800&display=swap');
+
+
+.container-fluid {
+  height: calc(100vh - 56px);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+
+  > .row {
+    height: 100%;
+  }
+}

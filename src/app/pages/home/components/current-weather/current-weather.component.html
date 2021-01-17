@@ -1,0 +1,19 @@
+<div class="cardcustom">
+  <div class="card-body">
+
+    <h2>{{ cityName }}</h2>
+
+    <jv-detailed-weather [weather]="cityWeather.weather" [unit]="unit"></jv-detailed-weather>
+
+    <div class="card-actions">
+      <div class="card-link btn btn-sm btn-outline-info p-2" (click)="onToggleBookmark()">
+        {{ isFavorite ? 'Remover dos favoritos' : 'Adicionar aos favoritos' }}
+      </div>
+      <div class="card-link btn btn-sm btn-outline-info p-2" routerLink="/details"
+        [queryParams]="{ lat: cityWeather.city.coord.lat, lon: cityWeather.city.coord.lon }">
+        Ver detalhes
+      </div>
+    </div>
+
+  </div>
+</div>

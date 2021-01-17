@@ -1,0 +1,84 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+/*Scroolbar*/
+body::-webkit-scrollbar {
+  width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(#17a2b8, #bdc3c7);
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.5);
+}
+/*Scroolbar*/
+
+/* Bootstrap Custom */
+.cardcustom {
+  margin: 4px 7px 2px 4px;
+  height: 100%;
+  width: 100%;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+  transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  padding: 14px 75px 12px 30px;
+  cursor: pointer;
+}
+
+  .cardcustom:hover {
+      transform: scale(1.02);
+      background-image: linear-gradient(#17a2b8, #bdc3c7);
+      box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+  }
+/* Bootstrap Custom */
+
+a:not([href]), a:not([href]):hover {
+  color: $primary;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+
+  position: relative;
+  margin: 100px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: $primary;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
